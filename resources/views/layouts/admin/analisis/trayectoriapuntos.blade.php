@@ -10,8 +10,7 @@
          <form method="POST" class="form-horizontal form-label-left" >      
       <table>
         <tr>
-
-          <td><label>Fecha desde:</label></td>
+          <td><label>Fecha: </label></td>
           <td><input type="datetime-local" name="fecha_desde" id="fecha_desde"></td>        
         </tr>
         <tr>
@@ -70,7 +69,7 @@
       var latlngA; var lat; var cont=0;  
       var latlngB; var lng; var cont_funcion=0;
       var fecha_desde;
-      var usuario="kbaque";
+      var usuario="{{ Auth::user()->id }}";
       var mymap = L.map('mapid', {
                     fadeAnimation: false,
                     zoomAnimation: false,
@@ -353,7 +352,7 @@
               url: "ajax_r_analisis/"+usuario+"/"+num_cluster,              
               success: function(result)
               {              
-                var imagen = document.getElementById('imagen').src = "{{ asset('img/images/analisis2.jpeg') }}";
+                var imagen = document.getElementById('imagen').src = "{{ asset('img/images/analisis2.png') }}";
               }
             });
         }
